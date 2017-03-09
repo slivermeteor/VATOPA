@@ -313,6 +313,7 @@ NTSTATUS ControlPassThrough(PDEVICE_OBJECT DeviceObject, PIRP pIrp)
 				pPhysicalAddressVA = (PULONG64)MmMapIoSpace(PhysicalAddress, sizeof(PHYSICAL_ADDRESS), MmNonCached);
 				DbgPrint("PageBase\t物理地址:%#llx\t页偏移:0x%x\t最终物理地址:%#llx\t映射虚拟地址:%#llx\t地址数值:%s\r\n",
 					PageBasePA, VirtualAddressIA32E.VirtualAddressForm.Page4K_2M.Page4K.ul4KPageOffset, ulPhysicalAddressPA, pPhysicalAddressVA, pPhysicalAddressVA);
+
 			}
 		}
 
